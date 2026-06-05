@@ -64,14 +64,15 @@ st.markdown("""
     }
     
     .section-header {
-        color: #1F4E78;
-        border-left: 3px solid #1F4E78;
-        padding-left: 8px;
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-weight: 600;
-        font-size: 16px;
-    }
+    color: #1F4E78;
+    border-left: 3px solid #1F4E78;
+    padding-left: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
     
     .filter-box {
         background-color: #F8F9FA;
@@ -125,6 +126,7 @@ vectorizer, nlp_model = load_nlp_model()
 
 if df_nasabah is not None and df_transaksi is not None and df_behavior is not None:
     # Header Utama Aplikasi
+    st.image("Logo FinSight FIX.png", width=200)
     st.markdown("<h1 style='text-align: center; color: #1F4E78;'>FinSight Admin Dashboard</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; color: #6C757D; font-size: 14px;'>Monitoring Transaksi Mutasi Nasabah & Analisis Perilaku Keuangan Berbasis K-Means & NLP</p>", unsafe_allow_html=True)
     st.markdown('<hr style="margin: 10px 0; border: none; border-top: 1px solid #E9ECEF;">', unsafe_allow_html=True)
