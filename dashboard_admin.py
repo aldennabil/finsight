@@ -64,15 +64,15 @@ st.markdown("""
     }
     
     .section-header {
-    color: #1F4E78;
-    border-left: 3px solid #1F4E78;
-    padding-left: 20px;
-    margin-left: 10px;
-    margin-top: 15px;
-    margin-bottom: 10px;
-    font-weight: 600;
-    font-size: 16px;
-}
+        color: #1F4E78;
+        border-left: 4px solid #1F4E78;
+        padding-left: 28px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 12px;
+        font-weight: 700;
+        font-size: 17px;
+    }
     
     .filter-box {
         background-color: #F8F9FA;
@@ -126,9 +126,18 @@ vectorizer, nlp_model = load_nlp_model()
 
 if df_nasabah is not None and df_transaksi is not None and df_behavior is not None:
     # Header Utama Aplikasi
-    st.image("Logo FinSight FIX.png", width=200)
-    st.markdown("<h1 style='text-align: center; color: #1F4E78;'>FinSight Admin Dashboard</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: #6C757D; font-size: 14px;'>Monitoring Transaksi Mutasi Nasabah & Analisis Perilaku Keuangan Berbasis K-Means & NLP</p>", unsafe_allow_html=True)
+    import base64
+    with open("Logo FinSight FIX.png", "rb") as img_file:
+        logo_b64 = base64.b64encode(img_file.read()).decode()
+    st.markdown(f"""
+        <div style="display:flex; align-items:center; justify-content:center; gap:18px; padding: 10px 0 4px 0;">
+            <img src="data:image/png;base64,{logo_b64}" style="height:70px; object-fit:contain;" />
+            <div style="text-align:left;">
+                <h1 style="margin:0; color:#1F4E78; font-size:32px; font-weight:700; line-height:1.2;">FinSight Admin Dashboard</h1>
+                <p style="margin:4px 0 0 0; color:#6C757D; font-size:13px;">Monitoring Transaksi Mutasi Nasabah &amp; Analisis Perilaku Keuangan Berbasis K-Means &amp; NLP</p>
+            </div>
+        </div>
+    """, unsafe_allow_html=True)
     st.markdown('<hr style="margin: 10px 0; border: none; border-top: 1px solid #E9ECEF;">', unsafe_allow_html=True)
 
     # ==========================================
